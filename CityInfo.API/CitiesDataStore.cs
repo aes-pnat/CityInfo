@@ -43,13 +43,13 @@ namespace CityInfo.API
                     {
                         new PointOfInterestDto()
                         {
-                            Id = 1,
+                            Id = 3,
                             Name = "Cathedral of Our Lady",
                             Description="Churthedral"
                         },
                         new PointOfInterestDto()
                         {
-                            Id = 2,
+                            Id = 4,
                             Name = "Antwerp Central Station",
                             Description = "Don't they only use bikes in Belgium"
                         }
@@ -64,13 +64,13 @@ namespace CityInfo.API
                     {
                         new PointOfInterestDto()
                         {
-                            Id = 1,
+                            Id = 5,
                             Name = "La Tour Eiffel",
                             Description="That's the thing from John Wick 4 right?"
                         },
                         new PointOfInterestDto()
                         {
-                            Id = 2,
+                            Id = 6,
                             Name = "Les Champs-Elysees",
                             Description = "Crashed the '71 Cuda here"
                         }
