@@ -2,10 +2,12 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace CityInfo.API.Migrations
 {
     /// <inheritdoc />
-    public partial class CityInfoDBInitialMigration : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -43,6 +45,29 @@ namespace CityInfo.API.Migrations
                         principalTable: "Cities",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cities",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Rats and subways", "New York City" },
+                    { 2, "Where ants like to werp", "Antwerp" },
+                    { 3, "Baguette", "Paris" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PointOfInterest",
+                columns: new[] { "Id", "CityId", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, 1, "Sticky stairs", "Central Park" },
+                    { 2, 1, "Batman or something", "Chrysler Building" },
+                    { 3, 2, "Churthedral", "Cathedral of Our Lady" },
+                    { 4, 2, "Don't they only use bikes in Belgium", "Antwerp Central Station" },
+                    { 5, 3, "That's the thing from John Wick 4 right?", "La Tour Eiffel" },
+                    { 6, 3, "Crashed the '71 Cuda here", "Les Champs-Elysees" }
                 });
 
             migrationBuilder.CreateIndex(

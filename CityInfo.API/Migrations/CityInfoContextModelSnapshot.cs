@@ -34,6 +34,26 @@ namespace CityInfo.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Rats and subways",
+                            Name = "New York City"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Where ants like to werp",
+                            Name = "Antwerp"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Baguette",
+                            Name = "Paris"
+                        });
                 });
 
             modelBuilder.Entity("CityInfo.API.Entities.PointOfInterest", b =>
@@ -59,6 +79,50 @@ namespace CityInfo.API.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("PointOfInterest");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CityId = 1,
+                            Description = "Sticky stairs",
+                            Name = "Central Park"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityId = 1,
+                            Description = "Batman or something",
+                            Name = "Chrysler Building"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 2,
+                            Description = "Churthedral",
+                            Name = "Cathedral of Our Lady"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CityId = 2,
+                            Description = "Don't they only use bikes in Belgium",
+                            Name = "Antwerp Central Station"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CityId = 3,
+                            Description = "That's the thing from John Wick 4 right?",
+                            Name = "La Tour Eiffel"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CityId = 3,
+                            Description = "Crashed the '71 Cuda here",
+                            Name = "Les Champs-Elysees"
+                        });
                 });
 
             modelBuilder.Entity("CityInfo.API.Entities.PointOfInterest", b =>

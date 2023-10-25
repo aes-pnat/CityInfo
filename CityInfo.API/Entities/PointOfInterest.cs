@@ -17,6 +17,9 @@ namespace CityInfo.API.Entities
         public string? Description { get; set; }
         [ForeignKey("CityId")]
         public City? City { get; set; }
+        // CHECK THIS FUCKING PART OF THE VIDEO AGAIN DUMBASS
+
+
         public int CityId { get; set; }
 
         public PointOfInterest(string name) {
